@@ -24,4 +24,4 @@ RUN echo "" >> $HOME/.bashrc
 RUN echo "unset DATABASE_URL" >> $HOME/.bashrc
 RUN echo "export DATABASE_URL" >> $HOME/.bashrc
 
-RUN pip3 install pytest==6.2.5 mock pytest-testdox toml flask_sqlalchemy
+RUN pip3 install pytest==6.2.5 mock pytest-testdox toml flask_mysqldb
