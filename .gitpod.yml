@@ -4,7 +4,8 @@ image:
 tasks:
   - name: AproSql e creo Database popolandolo
     command: mysql -e "CREATE DATABASE flask; USE flask; CREATE TABLE IF NOT EXISTS products (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) NOT NULL, description TEXT, price DECIMAL(10, 2) NOT NULL); INSERT INTO products (name, description, price) VALUES ('python', 'linguaggio alto livello', '10'), ('java', 'linguaggio alto livello', '20'), ('kawasaki ninja', 'wow', '15000');"
-
+  - name: Start flask server
+    command: python try.py
     
 
     
