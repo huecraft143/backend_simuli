@@ -1,10 +1,12 @@
-from flask import Flask
+from flask import Flask, send_from_directory, render_template
 from flask_mysqldb import MySQL
+import os
 
 app = Flask(__name__)
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # MySQL configurations
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_HOST'] = ''
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'flask'
@@ -24,5 +26,16 @@ def list_products():
     rv = cur.fetchall()
     return str(rv)
 
+@app.route('/static')
+def static_try():
+    return send_from_directory(current_dir ,'index_static.html')
+
+@app.route('/renderer')
+def render_try():
+    cur = mysql.connection.cursor()
+    cur.execute('''SELECT * FROM products''')
+    products = cur.fetchall()
+    print(products)
+    return(render_template('index_renderer.html', products=products))
 if __name__ == '__main__':
     app.run(debug=True)
