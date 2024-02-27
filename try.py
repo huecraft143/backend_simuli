@@ -3,7 +3,6 @@ from flask_mysqldb import MySQL
 import os
 
 app = Flask(__name__)
-current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # MySQL configurations
 app.config['MYSQL_HOST'] = ''
@@ -28,7 +27,7 @@ def list_products():
 
 @app.route('/static')
 def static_try():
-    return send_from_directory(current_dir ,'index_static.html')
+    return send_from_directory('statics' ,'index_static.html')
 
 @app.route('/renderer')
 def render_try():
