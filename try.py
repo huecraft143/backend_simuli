@@ -18,6 +18,7 @@ def users():
     cur.execute('''SELECT user, host FROM mysql.user''')
     rv = cur.fetchall()
     return str(rv)
+    
 @app.route('/products')
 def list_products():
     cur = mysql.connection.cursor()
