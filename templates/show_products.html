@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Elenco Prodotti</title>
+</head>
+<body>
+    <h1>Elenco Prodotti</h1>
+    <div id="product-list">
+        {% for product in products %}
+            <div class="product">
+                <h2>Stampo prodotto</h2>
+                <p>Nome: {{ product[1] }}</p>
+                <p>Desc: {{ product[2] }}</p>
+                <p>Value: {{ product[3] }}</p>
+                <!-- Add more fields as needed based on your products table structure -->
+            </div>
+        {% else %}
+            <p>Nessun prodotto trovato.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

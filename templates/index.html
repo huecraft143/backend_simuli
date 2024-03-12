@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Ricerca Prodotto</title>
+</head>
+<body>
+    <h1>Ricerca Prodotto</h1>
+    <form action="/search" method="post">
+        <input type="text" name="search_value" placeholder="Inserisci il nome del prodotto">
+        <input type="checkbox" name="ordering">
+        <button type="submit">Cerca</button>
+    </form>
+    <form action="/show_products" method="get">
+        <button type="submit">Visualizza tutti i prodotti presenti nel magazzino</button>
+    </form>
+</body>
+</html>
